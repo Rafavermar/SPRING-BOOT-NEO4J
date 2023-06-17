@@ -4,6 +4,7 @@ import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 
+
 @Node
 public class Course {
     @Id @GeneratedValue
@@ -11,6 +12,7 @@ public class Course {
     private String identifier;
     private String title;
     private String teacher;
+
 
     public Course(){
 
@@ -40,4 +42,6 @@ public class Course {
     public void setTeacher( String teacher ) {
         this.teacher = teacher;
     }
+
+
 }
