@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
+import java.security.Principal;
 import java.util.List;
 
 @Tag(name = "1. Courses", description = "Administration for Course entity")
@@ -30,7 +31,7 @@ public interface CourseControllerSwagger {
                     content = { @Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
                             schema = @Schema(implementation = CourseDTO.class))})
     })
-    ResponseEntity<List<CourseDTO>> courseIndex();
+    ResponseEntity<List<CourseDTO>> courseIndex( Principal principal );
 
     @Operation(summary = "Get Course Details")
     @ApiResponses(value = {
