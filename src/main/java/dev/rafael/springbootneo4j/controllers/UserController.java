@@ -12,7 +12,7 @@ import java.security.Principal;
 
 @RestController
 @RequestMapping("/api/v1/auth")
-public class UserController {
+public class UserController implements UserControllerSwagger  {
     private final UserService userService;
 
     public UserController( UserService userService ) {
@@ -25,6 +25,11 @@ public class UserController {
         return principal.getName();
     }
 
+
+    @Override
+    public ResponseEntity<String> loggedInUser( Principal principal ) {
+        return null;
+    }
 
     @PostMapping("/register")
     public ResponseEntity<UserDTO> signUp( @RequestBody CreateUserRequest  request) {

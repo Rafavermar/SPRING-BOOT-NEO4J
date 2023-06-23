@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1/courses")
-public class CourseController {
+public class CourseController implements CourseControllerSwagger{
     private final CourseService courseService;
     private final LessonService lessonService;
 
